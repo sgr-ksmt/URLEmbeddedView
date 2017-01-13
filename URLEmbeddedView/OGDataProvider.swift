@@ -144,7 +144,7 @@ extension OGDataProvider {
         OGDataCacheManager.sharedInstance.delete(ogData, completion: completion)
     }
     
-    func cancelLoad(_ uuidString: String, stopTask: Bool) {
+    public func cancelLoad(_ uuidString: String, stopTask: Bool) {
         taskContainers[uuidString]?.completion = nil
         if stopTask {
             taskContainers[uuidString]?.task.cancel()

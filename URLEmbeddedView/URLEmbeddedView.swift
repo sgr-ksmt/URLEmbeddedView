@@ -19,22 +19,22 @@ open class URLEmbeddedView: UIView {
     //MARK: - Properties
     fileprivate let alphaView = UIView()
     
-    let imageView = URLImageView()
+    public let imageView = URLImageView()
     fileprivate var imageViewWidthConstraint: NSLayoutConstraint?
     
-    fileprivate let titleLabel = UILabel()
+    public let titleLabel = UILabel()
     fileprivate var titleLabelHeightConstraint: NSLayoutConstraint?
-    fileprivate let descriptionLabel = UILabel()
+    public let descriptionLabel = UILabel()
     
     fileprivate let domainConainter = UIView()
     fileprivate var domainContainerHeightConstraint: NSLayoutConstraint?
-    fileprivate let domainLabel = UILabel()
+    public let domainLabel = UILabel()
     fileprivate let domainImageView = URLImageView()
     fileprivate var domainImageViewToDomainLabelConstraint: NSLayoutConstraint?
     fileprivate var domainImageViewWidthConstraint: NSLayoutConstraint?
     
     fileprivate let activityView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-    fileprivate lazy var linkIconView: LinkIconView = {
+    public lazy var linkIconView: LinkIconView = {
         return LinkIconView(frame: self.bounds)
     }()
     

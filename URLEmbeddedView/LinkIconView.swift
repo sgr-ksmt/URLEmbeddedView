@@ -8,21 +8,21 @@
 
 import UIKit
 
-final class LinkIconView: UIView {
+public final class LinkIconView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         setNeedsDisplay()
     }
     
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         // Drawing code
         let pdfPage = loadPdf()
         let context = UIGraphicsGetCurrentContext()

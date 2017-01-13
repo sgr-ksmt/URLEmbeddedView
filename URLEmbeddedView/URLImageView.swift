@@ -9,7 +9,7 @@
 import UIKit
 import MisterFusion
 
-final class URLImageView: UIImageView {
+public final class URLImageView: UIImageView {
     fileprivate let activityView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     fileprivate var uuidString: String?
     var activityViewHidden: Bool = false
@@ -20,7 +20,7 @@ final class URLImageView: UIImageView {
         initialize()
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -34,7 +34,7 @@ final class URLImageView: UIImageView {
         )
     }
     
-    func loadImage(urlString: String, completion: ((UIImage?, NSError?) -> Void)? = nil) {
+    public func loadImage(urlString: String, completion: ((UIImage?, NSError?) -> Void)? = nil) {
         cancelLoadImage()
         if !activityViewHidden {
             activityView.startAnimating()
