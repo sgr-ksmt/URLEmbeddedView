@@ -334,12 +334,7 @@ extension URLEmbeddedView {
                 self?.descriptionLabel.attributedText = self?.textProvider[.description].attributedText(ogData.pageDescription)
                 if !ogData.imageUrl.isEmpty {
                     self?.imageView.loadImage(urlString: ogData.imageUrl) {
-                        if let _ = $0 , $1 == nil {
-                            self?.changeImageViewWidthConstrain(nil)
-                        } else {
-                            self?.changeImageViewWidthConstrain(0)
-                        }
-                        self?.layoutIfNeeded()
+                        self?.updateImageViewFrame(image: $0, error: $1)
                     }
                 } else {
                     self?.changeImageViewWidthConstrain(0)
@@ -362,6 +357,15 @@ extension URLEmbeddedView {
                 completion?(nil)
             }
         }
+    }
+    
+    public func updateImageViewFrame(image: UIImage?, error: NSError?) {
+        if let _ = image , error == nil {
+            self.changeImageViewWidthConstrain(nil)
+        } else {
+            self.changeImageViewWidthConstrain(0)
+        }
+        self.layoutIfNeeded()
     }
     
     public func cancelLoad() {
